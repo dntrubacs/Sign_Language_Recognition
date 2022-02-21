@@ -1,5 +1,5 @@
 '''
-Created by Daniel-Iosif Trubacs and Ivalin Braghis for the UOS AI SOCIETY on 2 January 2022.
+Created by Daniel-Iosif Trubacs and Ivalin Chobanov for the UOS AI SOCIETY on 2 January 2022.
 A modules used to simplify the algorithm for detecting hands.  To use just import the HandDetection class
 and use the highlight method. This algorithm is to be used with SRmodel so model takes as input an RGB image
 (of any size) and returns a 28 x 28 gray image that can be used for the trained model.

@@ -3,7 +3,6 @@ Data processing for sign language recognition. The data used has been taken from
 (all letters from the english alphabet except J and Z) and https://github.com/ardamavi/Sign-Language-Digits-Dataset (for the digits 0-9)
 All the data has been transformed to numpy arrays of dimension 28x28 (representing a image in gray scale) and the labels are arrays
 of size (36,) (corresponding to the sign_labels shown  below). The data has been saved with pickle and is ready to use for training a model.
-The data is freely available to download.
 '''
 
 #importing the necessary libraries

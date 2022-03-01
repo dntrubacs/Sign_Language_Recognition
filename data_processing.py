@@ -1,4 +1,5 @@
 '''
+Created by Daniel-Iosif Trubacs for the UOS AI SOCIETY on 28 February 2022.
 Data processing for sign language recognition. The data used has been taken from: https://www.kaggle.com/datamunge/sign-language-mnist.
 (all letters from the english alphabet except J and Z) and https://github.com/ardamavi/Sign-Language-Digits-Dataset (for the digits 0-9)
 All the data has been transformed to numpy arrays of dimension 28x28 (representing a image in gray scale) and the labels are arrays

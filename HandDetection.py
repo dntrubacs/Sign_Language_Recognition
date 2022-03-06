@@ -1,5 +1,5 @@
 '''
-Created by Daniel-Iosif Trubacs and Ivalin Chobanov for the UOS AI SOCIETY on 2 January 2022.
+Created by Daniel-Iosif Trubacs and Ivalin Braghis for the UOS AI SOCIETY on 2 January 2022.
 A modules used to simplify the algorithm for detecting hands.  To use just import the HandDetection class
 and use the highlight method. This algorithm is to be used with SRmodel so model takes as input an RGB image
 (of any size) and returns a 28 x 28 gray image that can be used for the trained model.
@@ -12,6 +12,10 @@ import cv2 as cv
 import numpy as np
 import copy
 from matplotlib import pyplot as plt
+from skimage.transform import resize
+from skimage import img_as_ubyte
+
+
 
 # Setting the hand detection algorithm up (using mediapipe)
 mpHands = mp.solutions.hands
@@ -104,10 +108,14 @@ class HandDetection:
             if show_hand:
                 cv.rectangle(self.img, P_min_0, P_max_0, (0, 0, 255), 2)
 
+
+
         # changing the image to gray
         new_image = cv.cvtColor(new_image, cv.COLOR_BGR2GRAY)
-        # resizing the image to 28x28
-        new_image = cv.resize(new_image,(28,28),cv.INTER_NEAREST)
+        
+        # resizing the image
+        new_image = resize(new_image, (28, 28), anti_aliasing=True)
+        new_image = img_as_ubyte(new_image)
 
         # returning the image which is expected to contain the hand detected in the original
         return new_image
@@ -117,11 +125,12 @@ class HandDetection:
 This part is optional. Set trial to True if you want to test the detection algorithm. 
 For the image('hand.jpeg') upload any photo containing a hand
 '''
-trial = False
+trial = True
 if trial:
- img = cv.imread('hand.jpeg')
+ img = cv.imread('hand0.jpeg')
  Hand = HandDetection(img)
  img = Hand.highlight(show_hand=True, show_landmarks=True)
  plt.imshow(img,cmap='gist_gray')
+ cv.imwrite("saved.png", img)
  plt.show()
  cv.waitKey()

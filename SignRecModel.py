@@ -1,6 +1,6 @@
 '''
 Sign Language Translation.
-Created by Daniel-Iosif Trubacs for the UOS AI SOCIETY on 2 January 2022
+Created by Daniel-Iosif Trubacs for the UOS AI SOCIETY on 2 March 2022
 This model represent a better version of the SignRecModel which accounts for both letters and digits.
 The data data has been processed in data_processing module and saved to numpy arrays with pickle
 The model uses residual conv nets.
